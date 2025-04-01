@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect  } from "react";
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
@@ -114,7 +114,9 @@ console.log("file", file)
         }
         handleClose();  // Close the modal after submission
     };
-
+useEffect(()=>{
+       setFile(singleUserData?.file)
+     },[singleUserData])
     // OnChange handlers to clear error when the user starts typing
     const handleChange = (field) => {
         setErr(prevErr => ({
